@@ -1,0 +1,4 @@
+# vars file for ubuntu-1604-nfs-client
+---
+ubuntu_1604_nfs_client_install:
+  - nfs-common

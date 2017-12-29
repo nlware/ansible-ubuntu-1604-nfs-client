@@ -1,0 +1,17 @@
+# tasks file for ubuntu-1604-nfs-client
+---
+- name: install
+  apt:
+    name: "{{ item }}"
+  with_items: "{{ ubuntu_1604_nfs_client_install }}"
+
+- name: configure mounts
+  mount:
+    name: "{{ item.name }}"
+    src: "{{ item.src }}"
+    fstype: "{{ item.fstype }}"
+    opts: "{{ item.opts | default('defaults') }}"
+    state: "{{ item.state | default('mounted') }}"
+    dump: "{{ item.dump | default('0') }}"
+    passno: "{{ item.passno | default('0') }}"
+  with_items: "{{ ubuntu_1604_nfs_client_mounts }}"

@@ -1,0 +1,7 @@
+# test file for ubuntu-1604-nfs-client
+---
+- hosts: all
+  remote_user: vagrant
+  become: true
+  roles:
+    - ../../

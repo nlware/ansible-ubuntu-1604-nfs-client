@@ -1,0 +1,7 @@
+# test file for ubuntu-1604-nfs-client
+---
+- hosts: localhost
+  connection: local
+  become: true
+  roles:
+    - ../../
